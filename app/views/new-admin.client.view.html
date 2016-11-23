@@ -1,0 +1,58 @@
+<!-- Main content -->
+<section class="content">
+	<!-- Signup box -->
+	<div class="register-box">
+		<!-- Logo -->
+		<div class="register-logo">
+			<img ng-src="{{mediaData.logoPath + mediaData.logoFile}}" alt="logo" class="logo">
+		</div><!-- /.logo -->
+		<!-- Signup box body -->
+		<div class="register-box-body">
+			<h4 class="login-box-msg">Please create an admin account</h4>
+			<!-- Signup form -->
+			<form name="userForm" data-ng-init="authenticationCtrl.accountType='admin'" data-ng-submit="authenticationCtrl.newAdmin()" autocomplete="off">
+				<div class="form-group">
+					<input type="text"
+					       class="form-control"
+					       data-ng-model="authenticationCtrl.credentials.firstName"
+					       placeholder="First Name"
+					       required>
+				</div>
+				<div class="form-group">
+					<input type="text"
+					       class="form-control"
+					       data-ng-model="authenticationCtrl.credentials.lastName"
+					       placeholder="Last Name"
+					       required>
+				</div>
+				<div class="form-group">
+					<input type="email"
+					       class="form-control"
+					       data-ng-model="authenticationCtrl.credentials.email"
+					       placeholder="Email"
+					       required>
+				</div>
+				<div class="form-group">
+					<input type="text"
+					       class="form-control"
+					       data-ng-model="authenticationCtrl.credentials.username"
+					       placeholder="Username"
+					       required>
+				</div>
+				<div class="form-group">
+					<input type="password"
+					       class="form-control"
+					       data-ng-model="authenticationCtrl.credentials.password"
+					       placeholder="Password"
+					       required>
+				</div>
+				<div class="text-center form-group">
+					<button type="submit" class="btn btn-flat btn-primary">Sign up</button>&nbsp; or&nbsp;
+				</div>
+				<div data-ng-show="authenticationCtrl.error" class="text-center text-danger">
+					<strong data-ng-bind="authenticationCtrl.error"></strong>
+				</div>
+			</form><!-- /.signup-form -->
+		</div><!-- /.signup-box-body -->
+	</div><!-- /.signup-box -->
+</section><!-- /.main-content -->

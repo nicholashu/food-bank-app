@@ -10,6 +10,10 @@ var mongoose = require('mongoose'),
  * Settings Schema
  */
 var SettingsSchema = new Schema({
+	adminAccountExists: {
+		type: Boolean,
+		default: false
+	},
 	organization: {
 		type: String,
 		trim: true,

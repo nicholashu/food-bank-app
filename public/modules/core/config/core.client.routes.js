@@ -61,3 +61,21 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 		$urlRouterProvider.otherwise('404');
 	}
 ]);
+
+/*
+.run(function($rootScope, $state) {
+	console.log("running this");
+	console.log("state is ", $state);
+	$rootScope.$on( '$stateChangeStart', function(e, toState) {
+		console.log("changing to state ", toState);
+		if (toState.name === "") {
+			console.log("changing to state ''");
+			e.preventDefault();
+			if ($rootScope.tconfig)
+				$state.go('root.signin');
+			else
+				$state.go('root.new-admin');
+		}
+	});	
+});
+*/

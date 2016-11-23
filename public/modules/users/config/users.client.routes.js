@@ -49,6 +49,15 @@ angular.module('users').config(['$stateProvider',
 				}
 			}
 		}).
+		state('root.new-admin', {
+			url: 'new-admin',
+			views: {
+				'content@': {
+					templateUrl: 'modules/users/views/authentication/new-admin.client.view.html',
+					controller: 'AuthenticationController as authenticationCtrl'
+				}
+			}
+		}).
 		state('root.forgot', {
 			url: 'password/forgot',
 			views: {

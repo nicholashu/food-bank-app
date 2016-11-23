@@ -41,12 +41,24 @@ db.once('open', function() {
 	// Bootstrap passport config
 	require('./config/passport')();
 
-	// Start the app by listening on <port>
-	app.listen(config.port);
+	console.log("Loading app settings.");
+	
+	var Set = mongoose.model('Settings');
+	Set.findOne({}, function(err, settings) {
+		if (err) throw err;
+		
+	  if (settings)
+			app.settings = settings;
+		else
+			app.settings = new mongoose.model('Settings')();
 
-	// Expose app
-	exports = module.exports = app;
+		// Start the app by listening on <port>
+		app.listen(config.port);
 
-	// Logging initialization
-	console.log('MEAN.JS application started on port ' + config.port);
+		// Expose app
+		exports = module.exports = app;
+
+		// Logging initialization
+		console.log('Application started on port ' + config.port);
+	});
 });

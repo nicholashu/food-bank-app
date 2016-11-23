@@ -4,7 +4,7 @@
 	angular.module('users').controller('AuthenticationController', AuthenticationController);
 
 	/* @ngInject */
-	function AuthenticationController($http, Authentication, $state) {
+	function AuthenticationController($rootScope, $http, Authentication, $state, SettingsObject) {
 		var self = this;
 
 		self.authentication = Authentication;
@@ -24,6 +24,12 @@
 			}).error(function(response) {
 				self.error = response.message;
 			});
+		};
+
+		self.newAdmin = function() {
+			$rootScope.tconfig.adminAccountExists = true;
+			SettingsObject.saveSettings($rootScope.tconfig);
+			self.singup();
 		};
 
 		self.signin = function() {

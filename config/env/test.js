@@ -1,13 +1,8 @@
 'use strict';
-// Get template configuration from file
-var appconfig = require('../../app-config.json');
 
 module.exports = {
-	db: 'mongodb://localhost' + appconfig.mongodb_test,
+	db: process.env.MONGO_TEST_URI,
 	port: 3001,
-	app: {
-		title: appconfig.organization + ' - Test Environment'
-	},
 	mailer: {
 		from: process.env.MAILER_FROM || 'MAILER_FROM',
 		options: {
@@ -19,5 +14,3 @@ module.exports = {
 		}
 	}
 };
-
-console.log('APP CONFIG: DB: ', module.exports.db);
