@@ -55,7 +55,12 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 		});
 
 		// Redirect route from / to /signin
-		$urlRouterProvider.when('', 'signin');
+		$urlRouterProvider.when('', function() {
+			if (__adminAccountExists)
+				return 'signin';
+			else
+				return 'new-admin';
+		});
 
 		// Redirect to 404 page view when route not found
 		$urlRouterProvider.otherwise('404');

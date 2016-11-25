@@ -27,9 +27,9 @@
 		};
 
 		self.newAdmin = function() {
+			__adminAccountExists = true;
 			$rootScope.tconfig.adminAccountExists = true;
-			SettingsObject.saveSettings($rootScope.tconfig);
-			self.singup();
+			SettingsObject.saveSettings($rootScope.tconfig, self.signup);
 		};
 
 		self.signin = function() {

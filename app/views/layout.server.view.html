@@ -38,6 +38,11 @@
     <footer class="main-footer" data-ui-view="footer"></footer>
   </div>
 
+	<!--Embedding The Settings Data-->
+	<script type="text/javascript">
+		var __adminAccountExists = {{ appSettings.adminAccountExists }};
+	</script>
+
 	<!--Embedding The User Object-->
 	<script type="text/javascript">
 		var user = {{ user | json | safe }};

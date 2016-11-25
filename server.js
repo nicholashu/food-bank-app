@@ -1,7 +1,5 @@
 'use strict';
 
-require('pmx').init(); // log uncaught exceptions
-
 /**
  * Module dependencies.
  */
@@ -43,14 +41,13 @@ db.once('open', function() {
 
 	console.log("Loading app settings.");
 	
-	var Set = mongoose.model('Settings');
-	Set.findOne({}, function(err, settings) {
+	mongoose.model('Settings').findOne({}, function(err, settings) {
 		if (err) throw err;
 		
 	  if (settings)
-			app.settings = settings;
+			app.locals.appSettings = settings;
 		else
-			app.settings = new mongoose.model('Settings')();
+			app.locals.appSettings = new mongoose.model('Settings')();
 
 		// Start the app by listening on <port>
 		app.listen(config.port);
