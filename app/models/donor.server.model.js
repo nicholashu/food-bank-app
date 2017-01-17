@@ -5,17 +5,18 @@
  */
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
+	var ObjectId = mongoose.Types.ObjectId;
 
 /**
  * Donor Schema
  */
 
 var DonorSchema = new Schema({
-	/*_id: {
-		type: Number,
+	_id: {
+		type: Schema.Types.Mixed,
+		default: function () { return new ObjectId();},
 		ref: 'User'
 	},
-	*/
 	lastName: {
 		type: String,
 		trim: true

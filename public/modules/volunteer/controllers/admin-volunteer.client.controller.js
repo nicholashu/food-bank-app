@@ -130,7 +130,6 @@
 		// Update existing volunteer
 		self.update = function(updateType) {
 			var volunteer = self.volunteer;
-
 			if (updateType === 'Driver') {
 				volunteer.driver = true;
 			} else if (updateType === 'Inactive') {
@@ -139,9 +138,11 @@
 			} else {
 				volunteer.status = updateType;
 			}
-
+			console.log('updated')
+			console.log($state)
 			volunteer.$update(function() {
 				// Redirect after save
+				console.log('$update')
 				$state.go('root.listVolunteers');
 			}, function(errorResponse) {
 				self.error = errorResponse.data.message;

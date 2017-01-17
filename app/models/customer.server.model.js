@@ -7,6 +7,7 @@ var mongoose = require('mongoose'),
 	Schema = mongoose.Schema,
 	geocoder = require('geocoder'),
 	moment = require('moment');
+	var ObjectId = mongoose.Types.ObjectId;
 
 /**
  * Customer Schema
@@ -191,11 +192,11 @@ var CustomerSchema = new Schema({
 	},
 
 	// Application specific information
-	/*_id: {
-		type: Number,
+	_id: {
+		type: Schema.Types.Mixed,
+		default: function () { return new ObjectId();},
 		ref: 'User'
 	},
-	*/
 	dateReceived: {
 		type: Date,
 		default: Date.now

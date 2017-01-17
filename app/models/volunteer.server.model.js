@@ -5,6 +5,7 @@
  */
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
+	var ObjectId = mongoose.Types.ObjectId;
 
 /**
  * Volunteer Schema
@@ -101,12 +102,12 @@ var VolunteerSchema = new Schema({
 		trim: true
 	},
 	// Application specific information
-	/*Commented out to allow admin creation
+	/*Commented out to allow admin creation*/
 	_id: {
-		type: Number,
+		type: Schema.Types.Mixed,
+		default: function () { return new ObjectId();},
 		ref: 'User'
 	},
-	*/
 	dateReceived: {
 		type: Date,
 		default: Date.now

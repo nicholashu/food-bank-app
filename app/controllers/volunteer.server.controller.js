@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * Module dependencies
  */
@@ -15,7 +14,7 @@ var mongoose = require('mongoose'),
 exports.create = function(req, res) {
 	var volunteer = new Volunteer(req.body);
 	if (!req.body.manualAdd){
-		volunteer._id = req.user.id;
+		volunteer._id = req.user._id;
 		// Update user's hasApplied property to restrict them from applying again
 		User.findOneAndUpdate({_id: volunteer._id}, {$set: {hasApplied: true}})
 			.then(function() {
