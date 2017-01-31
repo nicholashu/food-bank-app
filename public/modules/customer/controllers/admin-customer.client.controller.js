@@ -2,19 +2,19 @@
 	angular.module('customer').controller('CustomerAdminController', CustomerAdminController);
 
 	/* @ngInject */
+<<<<<<< HEAD
 	function CustomerAdminController($window, $stateParams, $state, Authentication, CustomerAdmin,CustomerUser, Food, Form, SectionsAndFields) {
 
 		var self = this,
 				user = Authentication.user;
 
+=======
+	function CustomerAdminController($window, $stateParams, $state, Authentication, CustomerAdmin, Food, Form, SectionsAndFields) {
+		var self = this;
+		
+>>>>>>> freeCodeCamp/staging
 		// This provides Authentication context
 		self.authentication = Authentication;
-
-		// Verify is user has admin role, redirect to home otherwise
-		if (user && user.roles.indexOf('admin') < 0) {
-			$state.go('root');
-			return;
-		}
 
 		// If on edit view, not list view, initialize
 		if ($state.current.name === 'root.editCustomerAdmin') {
