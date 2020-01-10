@@ -30,7 +30,7 @@
     "dotenv": "^2.0.0",
     "express": "~4.14.0",
     "express-session": "~1.14.1",
-    "forever": "~0.15.2",
+    "forever": "~2.0.0",
     "geocoder": "^0.2.2",
     "glob": "^7.1.0",
     "grunt": "^1.0.1",
