@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.0
+version: v1.14.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -9,3 +9,20 @@ patch:
   'npm:uglify-js:20151024':
     - swig > uglify-js:
         patched: '2016-12-23T04:10:01.161Z'
+  SNYK-JS-LODASH-567746:
+    - lodash:
+        patched: '2020-05-01T23:04:26.711Z'
+    - async > lodash:
+        patched: '2020-05-01T23:04:26.711Z'
+    - grunt-contrib-csslint > lodash:
+        patched: '2020-05-01T23:04:26.711Z'
+    - grunt > grunt-legacy-log > lodash:
+        patched: '2020-05-01T23:04:26.711Z'
+    - grunt > grunt-legacy-util > lodash:
+        patched: '2020-05-01T23:04:26.711Z'
+    - grunt-contrib-jshint > jshint > lodash:
+        patched: '2020-05-01T23:04:26.711Z'
+    - mongoose > async > lodash:
+        patched: '2020-05-01T23:04:26.711Z'
+    - grunt > grunt-legacy-log > grunt-legacy-log-utils > lodash:
+        patched: '2020-05-01T23:04:26.711Z'
