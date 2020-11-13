@@ -50,7 +50,7 @@
     "morgan": "~1.7.0",
     "multer": "^1.2.0",
     "node-phantom-simple": "^2.2.4",
-    "nodemailer": "~2.6.4",
+    "nodemailer": "~6.4.16",
     "passport": "~0.3.2",
     "passport-local": "~1.0.0",
     "sendgrid": "^4.7.1",
